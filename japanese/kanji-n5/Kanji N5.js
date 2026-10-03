@@ -1,9 +1,10 @@
 // ==========================================
 // ⚙️ การตั้งค่าระบบ
 // ==========================================
+const SCRIPT_NAME = "Kanji N5"; // 📛 ชื่อ fallback ของสคริปต์ (ใช้เมื่อ Script.name() คืนค่าว่าง)
 const REFRESH_INTERVAL_MINUTES = 30; // ⏱️ แนะนำโดย Apple: 30 นาทีต่อคำ (กำลังพอดีกับการจำ ไม่กินแบต ไม่ติด Throttling)
 
-// � Shortcut ที่ต้องสร้างมีแค่ตัวเดียว: "SpeakJP" (สำหรับอ่านออกเสียง)
+// 🔊 Shortcut ที่ต้องสร้างมีแค่ตัวเดียว: "SpeakJP" (สำหรับอ่านออกเสียง)
 //    ปุ่มสุ่มคำใหม่เรียก Scriptable ตรงๆ ไม่ต้องสร้าง Shortcut เพิ่ม
 const SPEAK_SHORTCUT_NAME = "SpeakJP";
 
@@ -295,7 +296,7 @@ if (isShortcut) {
   // ⚡️ sync รอบรีเฟรชกับขอบ time-slot ถัดไป (best-effort ของ iOS)
   widget.refreshAfterDate = new Date(nextRefreshTime);
 
-  const currentScriptName = Script.name() || "Kanji N5";
+  const currentScriptName = Script.name() || SCRIPT_NAME;
   // 🔊 แตะเพื่ออ่านออกเสียง → เรียก Shortcut "SpeakJP"
   const speakUrl = "shortcuts://run-shortcut?name=" + encodeURIComponent(SPEAK_SHORTCUT_NAME) + "&input=" + encodeURIComponent(speakWord);
   // 🔄 แตะเพื่อสุ่มคำใหม่ → เรียก Scriptable ตรงๆ (เด้งเข้าแอปจังหวะเดียว กดสุ่มรัวใน preview ได้)
