@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Scriptable local cache / state files (generated on device, not source)
+*.cache.json
+*_shared_state.json
+
+# Logs
+*.log
