@@ -12,5 +12,5 @@
 # Logs
 *.log
 
-# Kiro local steering/config (เฉพาะเครื่อง ไม่ push)
+# Local editor/tooling config
 .kiro/
